@@ -36,6 +36,9 @@ public class Quiz05_1 extends HttpServlet {
 		String name = request.getParameter("name");
 		String age = request.getParameter("age");
 		
+		// 인코딩(암호화) : URLEncoder.encode("문자열", "utf-8")
+		// 디코딩(복호화) : URLDecoder.decode("문자열", "utf-8")
+		
 		response.sendRedirect("/01_SERVLET/Quiz05_2?name="+ URLEncoder.encode(name, "utf-8") + "&age=" + age);  // 새로운 파라미터를 보내준다.
 	}
 
