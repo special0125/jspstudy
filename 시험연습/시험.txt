@@ -1,0 +1,17 @@
+css 나누기
+
+index먼저 만들기
+
+로그인 버튼 누르면 index.html로 이동
+
+index.html에서 로그아웃을 누르면(로그아웃하시겠습니까?confirm창 후) 로그인 화면으로 이동
+
+input안에 이미지 넣기
+
+ul => flex
+li => <a> : block, width,heigth
+현재시간 자바스크립트 함수
+특정 시간대가 뜨면 로그인 제한 알림
+23~24시
+
+w3c유효성검사 css파일만

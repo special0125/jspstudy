@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>제목</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            const id = $('#id');
+            const pw = $('#pw');
+            
+            // 1. button을 클릭하면
+            const btn = $('#btn')
+            // btn.on('click', function(){})
+            btn.click(function(){
+                if(id.val() == ''){
+                    alert('아이디 필수')
+                    id.focus();
+                    return false;
+                }else if(pw.val() == '') {
+                    alert('비밀번호 필수')
+                    pw.focus();
+                    return false;
+                }
+                
+            })
+            // 2. form을 submit하면
+            const f = ${'#f'};
+            // f.on('submit', function(){})
+            f.submit(function(event){
+                 if(id.val() == ''){
+                    alert('아이디 필수');
+                    id.focus();
+                    event.preventDefault();
+                    return false;
+                }else if(pw.val() == '') {
+                    alert('비밀번호 필수');
+                    pw.focus();
+                    event.preventDefault();
+                    return false;
+                }
+                
+            })
+            
+            
+        })
+    </script>
+</head>
+<body>
+    <!-- header, section, footer -->
+    <!-- css 분리 -->
+    <!-- w3c 검사 : css파일만 검사 -->
+    <form id="f" action="index.html">
+        <input type="text" name="id" id="id"><br>
+        <input type="password" name="pw" id="pw"><br>
+        <button id="btn">로그인</button>
+    </form>
+    
+    <script>
+        
+        onload = function(){
+            document.getElementById('btn').onclick = function(){
+                if(document.getElementById('id').value == '') {
+                    alert('아이디 필수');
+                    document.getElementById('id').focus();
+                    return false;
+                }else if(document.getElementById('pw').value == '') {
+                    alert('비밀번호 필수');
+                    document.getElementById('pw').focus();
+                    return false;
+                }
+                if (confirm('로그인하시겠습니까?')) {
+                    return true;
+                }
+            }    
+        }
+        
+        
+    </script>
+    
+    
+</body>
+</html
