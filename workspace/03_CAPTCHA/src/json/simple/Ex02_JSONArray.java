@@ -27,7 +27,7 @@ public class Ex02_JSONArray {
 			e.printStackTrace();
 		}
 		
-		// list의 각 요소는 get() 메소드로 추출한다.
+		// list의 각 요소는 get() 메소드로 추출한다. 인덱스 이용
 		System.out.println("첫 번째 요소: " + list.get(0));
 		System.out.println("두 번째 요소: " + list.get(1));
 		

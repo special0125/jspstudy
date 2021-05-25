@@ -52,9 +52,14 @@
 			})
 			
 		
+			$('#cancel_btn').on('click', function(){
+				location.href = '../index.jsp';
+				// location.href = '/09_MODEL1/index.jsp';
+			})
 			
 			
 		})
+		
 	</script>
 </head>
 <body>
@@ -72,18 +77,18 @@
 				<c:if test="${not empty param.id}">
 					<input type="text" name="id" id="id" value="${param.id}">
 				</c:if>
-				<input type="button" value="중복확인" id="check_btn"><br>
+				<input type="button" value="중복확인" id="check_btn"><br><br>
 				<label for="pw">비밀번호</label><br>
-				<input type="password" name="pw" id="pw"><br>
-				<label for="pw2">비밀번호</label><br>
-				<input type="password" name="pw2" id="pw2"><br>
+				<input type="password" name="pw" id="pw"><br><br>
+				<label for="pw2">비밀번호 확인</label><br>
+				<input type="password" name="pw2" id="pw2"><br><br>
 				<label for="name">이름</label><br>
-				<input type="text" name="name" id="name"><br>
+				<input type="text" name="name" id="name"><br><br>
 				<label for="emial">이메일</label><br>
 				<input type="text" name="email" id="email"><br><br>
 				<button>가입하기</button>
 				<input type="reset" value="입력초기화">
-				<input type="button" value="가입취소하기" id="cancle_btn">
+				<input type="button" value="가입취소하기" id="cancel_btn">
 			</form>
 		</section>
 	</div>

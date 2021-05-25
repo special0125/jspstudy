@@ -1,0 +1,41 @@
+https://github.com/koreaitlecture
+
+학습 1 공통 모듈 설계하기
+필기 문제 30점
+
+4페이지
+14페이지
+22페이지
+31~32페이지
+Wep Server와 Web Application Server(WAS)
+
+
+네이버 API 70점;
+네아로 X
+캡차 X
+
+오픈API이용 신청!
+
+데이터랩
+검색
+단축URL 
+
+위 3개 중 하나
+
+네이버로 데이터를 보내줘야하는 문제
+요청
+파라미터를 확인한다!
+
+응답 
+파라미터 값만 빼올수있어야다
+
+JSONParser parser new JSONParser();
+
+JSONObject obj = (JSONObject)parser.parse(responseBody);  // obj is Map
+
+obj.get("startDate") == "2017-01-01"
+
+obj.get("results")
+
+
+파일 만드는거 연습!
