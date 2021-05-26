@@ -50,8 +50,26 @@ public class BoardDAO {
 	public List<BoardDTO> selectAll(PageVO pageVO) {
 		List<BoardDTO> list = new ArrayList<BoardDTO>();
 		try {
-			sql = "SELECT IDX, AUTHOR, TITLE, CONTENT, HIT, POSTDATE FROM BOARD";
+			/******************************************************
+			SELECT b.rn, b.employee_id, b.first_name
+			  FROM (SELECT ROWNUM AS rn, a.employee_id, a.first_name
+			          FROM (SELECT employee_id, first_name
+			                  FROM employees
+			                 ORDER BY hire_date) a) b
+			 WHERE b.rn BETWEEN 11 AND 20;
+			-- a : 정렬한 테이블
+			-- b : a 테이블에 rn을 추가한 테이블
+			******************************************************/
+
+			sql = "SELECT b.IDX, b.AUTHOR, b.TITLE, b.CONTENT, b.HIT, b.POSTDATE" +
+				  "  FROM (SELECT ROWNUM AS rn, a.IDX, a.AUTHOR, a.TITLE, a.CONTENT, a.HIT, a.POSTDATE" +
+				  "          FROM (SELECT IDX, AUTHOR, TITLE, CONTENT, HIT, POSTDATE" +
+				  "                  FROM BOARD" +
+				  "                 ORDER BY POSTDATE DESC) a ) b" +
+				  " WHERE b.rn BETWEEN ? AND ?";
 			ps = con.prepareStatement(sql);
+			ps.setInt(1, pageVO.getBeginRecord());
+			ps.setInt(2, pageVO.getEndRecord());
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				BoardDTO dto = new BoardDTO();
@@ -63,9 +81,9 @@ public class BoardDAO {
 				dto.setPostdate(rs.getDate(6));
 				list.add(dto);
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBConnector.getInstance().close(ps, rs);
 		}
 		return list;
