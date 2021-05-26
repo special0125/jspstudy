@@ -12,7 +12,7 @@
 			const pw = $('#pw');
 			const pw1 = $('#pw1');
 			const f = $('#f');
-			
+			const return_btn = ('#return_btn');
 			f.on('submit', function(event){
 				if (pw0.val() != '${loginDTO.pw}') {
 					alert('현재 비밀번호를 확인하세요.');
@@ -32,6 +32,11 @@
 					return false;
 				}
 			})
+			
+			return_btn.on('click', function(){
+				location.href = 'myPage.jsp';
+			})
+			
 			
 		})
 	</script>

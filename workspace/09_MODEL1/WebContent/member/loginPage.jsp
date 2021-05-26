@@ -34,7 +34,7 @@
 		<form id="f" action="login.jsp" method="post">
 			<h1>로그인</h1>
 			<input type="text" name="id" id="id" placeholder="ID"><br>
-			<input type="password" name="pw" id="pw" placeholder="PW">
+			<input type="password" name="pw" id="pw" placeholder="PW"><br><br>
 			<button>로그인</button>
 		</form>
 	</div>
