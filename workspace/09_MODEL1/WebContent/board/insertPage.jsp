@@ -17,7 +17,7 @@
 			display: inline-block;
 			width: 100px;
 		}
-		input, textarea {
+		input[type=text], textarea {
 			width: 100%;
 		}
 		textarea {
@@ -29,12 +29,12 @@
 		$(function(){
 			const f = $('#f');
 			const title = $('#title');
-			const author = $('#author')
+			const author = $('#author');
 			f.submit(function(event){
 				if (author.val() == '') {
 					alert('비정상적인 접근입니다.');
 					history.back();
-				}else if (title.val() == '') {
+				} else if (title.val() == '') {
 					alert('제목은 필수입니다.');
 					title.focus();
 					event.preventDefault();
@@ -45,16 +45,18 @@
 	</script>
 </head>
 <body>
+	
 	<div class="container">
 		<h1>게시글 작성하기</h1>
 		<form action="insertBoard.jsp" id="f" method="post">
 			<label>작성자</label><input type="text" name="author" id="author" value="${loginDTO.id}" readonly><br><br>
 			<label>제목</label><input type="text" name="title" id="title" autofocus><br><br>
-			<textarea name="content" placeholder="내용을 입력하세요"></textarea>
+			<textarea name="content" placeholder="내용을 입력하세요"></textarea><br><br>
 			<button>작성하기</button>
-			<input type="reset" value="작성 초기화">
+			<input type="reset" value="작성초기화">
 			<input type="button" value="게시판으로이동" onclick="location.href='boardList.jsp'">
 		</form>
 	</div>
+	
 </body>
 </html>

@@ -18,7 +18,7 @@ public class Ex01_JSONObject {
 		
 		// JSON 데이터
 		// 네이버가 우리에게 전달해 준 JSON이라고 생각한다.
-		String responseData = "{\"name\": \"브레드\", \"age\": 50 }";
+		String responseData = "{\"name\": \"브레드\", \"age\": 50 }, [{\"name\": \"윌크\", \"age\": 10 }, {\"name\": \"초코\", \"age\": 30 }]";
 		System.out.println(responseData);
 		// json_simple-1.1.1.jar 라이브러리
 		// 1. 구글에서 제공

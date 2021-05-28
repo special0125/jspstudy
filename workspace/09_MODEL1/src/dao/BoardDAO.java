@@ -13,10 +13,10 @@ import dto.PageVO;
 public class BoardDAO {
 
 	private Connection con;
-	private PreparedStatement ps ;
+	private PreparedStatement ps;
 	private ResultSet rs;
 	private String sql;
-
+	
 	private static BoardDAO dao = new BoardDAO();
 	private BoardDAO() {
 		con = DBConnector.getInstance().getConnection();
@@ -38,9 +38,9 @@ public class BoardDAO {
 			ps.setString(2, dto.getTitle());
 			ps.setString(3, dto.getContent());
 			result = ps.executeUpdate();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBConnector.getInstance().close(ps, null);
 		}
 		return result;
@@ -96,9 +96,9 @@ public class BoardDAO {
 			ps = con.prepareStatement(sql);
 			ps.setLong(1, idx);
 			ps.executeUpdate();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBConnector.getInstance().close(ps, null);
 		}
 	}
@@ -107,7 +107,7 @@ public class BoardDAO {
 	public BoardDTO selectByIdx(long idx) {
 		BoardDTO dto = null;
 		try {
-			sql = "SELECT AUTHOR, TITLE, CONTENT, HIT, POSTDATE FROM BOARD WHERE idx = ?";
+			sql = "SELECT AUTHOR, TITLE, CONTENT, HIT, POSTDATE FROM BOARD WHERE IDX = ?";
 			ps = con.prepareStatement(sql);
 			ps.setLong(1, idx);
 			rs = ps.executeQuery();
@@ -118,11 +118,11 @@ public class BoardDAO {
 				dto.setTitle(rs.getString(2));
 				dto.setContent(rs.getString(3));
 				dto.setHit(rs.getInt(4));
-				dto.setPostdate(rs.getDate(5));				
+				dto.setPostdate(rs.getDate(5));
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBConnector.getInstance().close(ps, rs);
 		}
 		return dto;
@@ -136,9 +136,9 @@ public class BoardDAO {
 			ps = con.prepareStatement(sql);
 			ps.setLong(1, idx);
 			result = ps.executeUpdate();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBConnector.getInstance().close(ps, null);
 		}
 		return result;
@@ -154,44 +154,31 @@ public class BoardDAO {
 			ps.setString(2, dto.getContent());
 			ps.setLong(3, dto.getIdx());
 			result = ps.executeUpdate();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBConnector.getInstance().close(ps, null);
 		}
 		return result;
 	}
 	
-	
-	
 	/* 7. 전체 게시글의 개수 반환 */
 	public int getTotalRecord() {
 		int totalRecord = 0;
-		try { 
-			sql = "SELECT COUTN(IDX) AS TOTAL_RECORD FROM BOARD";
+		try {
+			sql = "SELECT COUNT(IDX) AS TOTAL_RECORD FROM BOARD";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				totalRecord = rs.getInt(1);  // totalRecord = rs.getInt("TOTAL_RECORD");
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBConnector.getInstance().close(ps, rs);
 		}
 		return totalRecord;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
