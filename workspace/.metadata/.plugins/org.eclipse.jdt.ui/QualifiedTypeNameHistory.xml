@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="login.captcha.CaptchaValidation"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="model.GetToday"/>
-<fullyQualifiedTypeName name="model.GetNow"/>
-<fullyQualifiedTypeName name="model.GetLotto"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="model.GugudanService"/>
 <fullyQualifiedTypeName name="model.BeerService"/>
 <fullyQualifiedTypeName name="model.MealCommand"/>
@@ -39,18 +32,15 @@
 <fullyQualifiedTypeName name="dto.BoardDTO"/>
 <fullyQualifiedTypeName name="db.util.DBConnector"/>
 <fullyQualifiedTypeName name="dto.PageVO"/>
-<fullyQualifiedTypeName name="dto.MemberDTO"/>
 <fullyQualifiedTypeName name="dto.MemberLogDTO"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="javax.naming.Context"/>
 <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
 <fullyQualifiedTypeName name="javax.naming.NamingException"/>
-<fullyQualifiedTypeName name="dao.MemberDAO"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="common.ModelAndView"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -60,4 +50,14 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="command.member.LoginPageCommand"/>
+<fullyQualifiedTypeName name="command.member.MemberCommand"/>
+<fullyQualifiedTypeName name="controller.CommandMapper"/>
+<fullyQualifiedTypeName name="command.member.IndexPageCommand"/>
+<fullyQualifiedTypeName name="common.ModelAndView"/>
+<fullyQualifiedTypeName name="command.member.LoginCommand"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="javafx.util.converter.DateStringConverter"/>
+<fullyQualifiedTypeName name="dto.MemberDTO"/>
+<fullyQualifiedTypeName name="dao.MemberDAO"/>
 </qualifiedTypeNameHistroy>

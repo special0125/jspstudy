@@ -45,7 +45,7 @@ CREATE TABLE REPLY
 	AUTHOR VARCHAR2(50),  -- 작성자
 	CONTENT VARCHAR(4000),  -- 내용
 	IP VARCHAR2(20),  -- 작성자IP
-	BOARD_IDX NUMBER  -- 원글의 번호
+	BOARD_IDX NUMBER,  -- 원글의 번호
 	POSTDATE DATE  -- 작성일
 );
 

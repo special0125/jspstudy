@@ -7,7 +7,32 @@
 	<jsp:param value="로그인" name="title"/>
 </jsp:include>
 <link rel="stylesheet" href="../assets/css/layout.css">
-<link rel="stylesheet" href="../assets/css/login.css">
+<style>
+	.login_form {
+		width: 300px;
+		margin: 50px auto;
+	}
+	#f input{
+		padding: 5px;
+		width: 100%;
+		height: 50px;
+	}
+	#f button {
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		background-color: violet;
+		border: none;
+		font-size: 18px;
+	}
+	#f button:hover {
+		cursor: pointer;
+	}
+	.message {
+		font-size: 12px;
+		color: crimson;
+	}
+</style>
 <script>
 	$(document).ready(function(){
 		const f = $('#f');
@@ -34,7 +59,7 @@
 </script>
 
 <div class="login_form">
-	<form id="f" method="post">
+	<form action="/10_MODEL2/login.m" id="f" method="post">
 		<input type="text" name="id" id="id" placeholder="ID"><br>
 		<span class="message" id="id_message"></span><br>
 		<input type="password" name="pw" id="pw" placeholder="Password"><br>
