@@ -21,7 +21,7 @@
 		width: 100%;
 		height: 50px;
 		line-height: 50px;
-		background-color: violet;
+		background-color: orange;
 		border: none;
 		font-size: 18px;
 	}
