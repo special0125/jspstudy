@@ -6,20 +6,42 @@
 </jsp:include>
 
 <link rel="stylesheet" href="../assets/css/layout.css">
+
 <style>
 	.insert_form {
-		width: 800px;
-		margin: 50px auto;
+		width: 600px;
+		margin: 0 auto;
 	}
-	.text_box {
-		width: 500px;
+	input[type=text] {
+		padding: 5px;
+		width: 100%;
 		height: 50px;
 	}
-	#content {
-	height: 200px;
+	textarea {
+		padding: 5px;
+		width: 100%;
+		height: 200px;
 	}
-
+	.btns {
+		margin: 0 auto;
+		width: 500px;
+		text-align: center;
+	}
+	.btn {
+		width: 150px;
+		height: 40px;
+		line-height: 40px;
+		background: orange;
+		border: none;
+		outline: none;
+	}
+	.btn:hover {
+		background: crimson;
+		color: white;
+		cursor: pointer;
+	}
 </style>
+
 <script>
 	$(document).ready(function(){
 		const f = $('#f');
@@ -53,9 +75,11 @@
 		<p class="content">내용</p>
 		<textarea id="content" name="content" class="text_box"></textarea> <br><br>
 		<input type="hidden" name="ip" value="<%=request.getRemoteAddr()%>">
-		<input type="button" value="저장하기" id="insert_btn">		
-		<input type="reset" value="작성초기화" id="reset_btn">		
-		<input type="button" value="목록보기" id="list_btn">		
+		<div class="btns">
+			<input type="button" value="저장하기" id="insert_btn">		
+			<input type="reset" value="작성초기화" id="reset_btn">		
+			<input type="button" value="목록보기" id="list_btn">		
+		</div>
 	</form>
 </div>
 

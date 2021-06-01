@@ -176,7 +176,7 @@
 	
 	
 	
-</Context></Host>
+</Context><Context docBase="C:\spring0303\jspstudy\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\09_MODEL1" path="/09_MODEL1" reloadable="true" source="org.eclipse.jst.jee.server:09_MODEL1"/></Host>
     </Engine>
   </Service>
 </Server>

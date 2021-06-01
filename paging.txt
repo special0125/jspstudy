@@ -1,0 +1,10 @@
+totalPage : totalRecord, recordPerPage (SelectListBoardCommand)
+beginPage : page (SelectListBoardCommand), pagePerBlock (X)
+endPage : beginPage, totalPage, pagePerBlock(X)
+
+SelectListBoardCommand
+    totalRecord
+    recordPerPage
+    page
+-> 위 세 정보를 매개변수로 paging 처리하는 Paging ㅡㅋㄹ래스에 전달
+-> Paging 클래스에서 

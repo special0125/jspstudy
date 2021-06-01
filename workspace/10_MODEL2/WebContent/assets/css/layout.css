@@ -13,13 +13,19 @@ a {
 	width: 1000px;
 	margin: 0 auto;
 }
+.info {
+	width: 100%;
+	text-align: right;
+}
 nav {
-	display: flex;
+	width: 100%;
+	overflow: hidden;
 }
 nav > ul {
+	width: 100%;
 	list-style-type: none;
 	display: flex;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid gray;
 }
 nav > ul > li {
 	width: 120px;
@@ -33,10 +39,14 @@ nav > ul > li > a {
 	text-align: center;
 }
 nav > ul > li > a:hover {
-	color: red;
 	border-bottom: 2px solid red;
+	color: red;
 }
 .container > section {
 	padding: 20px;
 	height: 600px;
+}
+footer {
+	padding: 5px;
+	border-top: 1px solid gray;
 }
