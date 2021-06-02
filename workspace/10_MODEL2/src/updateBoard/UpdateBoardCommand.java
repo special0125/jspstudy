@@ -54,8 +54,8 @@ public class UpdateBoardCommand implements BoardCommand {
 				// 기존 첨부와 상관 없이 새로운 첨부가 있으면 DB의 파일명을 수정해야 한다.
 				if (newFile != null) {
 					dto.setFilename(multipartRequest.getFilesystemName("filename"));
-				}else {
-					dto.setFilename("");
+				}else if (oldFile != null){  // 새로운 첨부는 없고 기존 첨부는 있는 경우 기존 첨부를 입력
+					dto.setFilename(filename2);
 				}
 				
 				// DAO의 updateBoard() 메소드 호출

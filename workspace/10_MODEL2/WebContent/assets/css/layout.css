@@ -44,7 +44,7 @@ nav > ul > li > a:hover {
 }
 .container > section {
 	padding: 20px;
-	height: 600px;
+	min-height: 600px;
 }
 footer {
 	padding: 5px;
