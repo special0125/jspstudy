@@ -4,9 +4,6 @@ INDEX VERSION 1.4+C:\spring0303\jspstudy\workspace\.metadata\.plugins\org.eclips
 2633247083.index
 2988243063.index
 2204445395.index
-1866960169.index
-1866960169.index
-3425890356.index
 4240082809.index
 3515759688.index
 2256196633.index

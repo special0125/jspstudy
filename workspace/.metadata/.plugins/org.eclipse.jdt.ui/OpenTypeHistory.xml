@@ -6,4 +6,7 @@
 <typeInfo handle="=11_MYBATIS/src&lt;command{BoardCommand.java[BoardCommand" modifiers="513" timestamp="1622605431044"/>
 <typeInfo handle="=12_AJAX/src&lt;command{MemberCommand.java[MemberCommand" modifiers="513" timestamp="1622769158379"/>
 <typeInfo handle="=13_AJAX/src&lt;command{MemberCommand.java[MemberCommand" modifiers="513" timestamp="1623024968782"/>
+<typeInfo handle="=14_BATCH/C:\/Program Files\/Java\/jre1.8.0_202\/lib\/rt.jar=/owner.project.facets=/java=/=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;com.sun.corba.se.spi.presentation.rmi(PresentationManager$StubFactory.class[StubFactory" modifiers="1545" timestamp="1616388181543"/>
+<typeInfo handle="=14_BATCH/src&lt;command{StudentCommand.java[StudentCommand" modifiers="513" timestamp="1623133766839"/>
+<typeInfo handle="=14_BATCH/C:\/spring0303\/jspstudy\/workspace\/14_BATCH\/WebContent\/WEB-INF\/lib\/quartz-2.3.0-SNAPSHOT.jar&lt;org.quartz(Job.class[Job" modifiers="1537" timestamp="1623120362251"/>
 </typeInfoHistroy>
