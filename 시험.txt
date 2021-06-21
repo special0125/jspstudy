@@ -1,48 +1,6 @@
-https://github.com/koreaitlecture
-https://itsc.cafe24.com/
-
-- 게시글/댓글
-- 게시글을 열면 댓글 작성 + 댓글 리스트
-- 누구나 열고 작성할 수 있다.
-- index.jsp 열리면 3초 후에 게시판으로 이동하기
-  (setTimeout 함수)
-<script>
-	setTimeout(function(){
-		location.href = '';	
-		}, 3000);
-</script>
-- 기본 데이터 5개 : 목록으로 생성 (게시글)
-- 새 글 작성 -> 다시 목록으로 이동
-- 제목 클릭해서 열기 + 조회수 늘리기
-- 열 때
-   if (session.getAttribute("open") == null) {
-	 BoardDAO.getinstance().updateHit(no);
-  	 session.setAttribute("open", true);
-   }
-- 언제 session의 open을 없애는가? 
-    : 목록 보기로 나간 경우
-   if (session.getAttribute("open") != null) {
-	session.removeAttribute("open");
-}
-- 게시글 삭제(댓글 달린 건 안 지워짐)
-	- 댓글 여부 확인 후 "메시지"
-	- 댓글 없으면 지워지고 다시 목록으로 이동
-
-- 게시글 보기 화면 하단
-- 댓글 작성 + 댓글 리스트
-
-- 댓글 작성 : 내용 + 작성자 입력 후 댓글 작성
-- 댓글 등록 후 게시글 보기 화면으로 되돌아 오기
-
-- 배치 
-- 최대 조회수를 가진 게시글을 가져와서 콘솔에 출력
-- Hit
-SELECT * FROM BOARD WHERE HIT = (SELECT MAX(HIT) FROM BOARD);
-SELECT a.* FROM (SELECT * FROM ORDER BY HIT DESC) a WHERE ROWNUM = 1;
-리스너 ServletContextListnenr인터페이스 add
-라이브러리 라도 넣기 quartz-2.3.0 -> lib
+8p 1-7
 
 
+1-3그림
 
-model2 dao DataSource 사용하려면
-META-INF -> context.xml
+11p 구축유형
