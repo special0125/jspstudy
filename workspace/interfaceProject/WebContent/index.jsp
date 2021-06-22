@@ -11,6 +11,7 @@
 		$(document).ready(function(){
 			fn_selectList()
 			fn_insert();
+			fn_delete();
 		});
 		
 		//함수
@@ -29,25 +30,26 @@
 			})
 		}
 		function fn_tableMaker(arr) {
-			
+			/*
 			var result = '';
 			for (let i = 0; i < arr.length; i++) {
 				result += '<tr><td>' + arr[i].sno + '</td><td>' + arr[i].name + '</td><td>' + arr[i].age + '</td><td>' + arr[i].birthday + '</td><td>' + arr[i].regdate + '</td></tr>';
 			}
 			$('#Person_list').empty();
 			$('#person_list').html(result);
-			/*
-			$('#person_list').empty
-			$.each(arr function(i, person){
+			*/
+			$('#person_list').empty();
+			$.each(arr, function(i, person){
 				$('<tr>')
 				.append( $('<td>').text(person.sno) )
 				.append( $('<td>').text(person.name) )
 				.append( $('<td>').text(person.age) )
-				.append( $('<td>').text(person.birth) )
+				.append( $('<td>').text(person.birthday) )
 				.append( $('<td>').text(person.regdate) )
-				.appendTo('#person_List');
+				.append( $('<input type="hidden" name="sno">').val(person.sno) )
+				.append( $('<input type="button" value="삭제" id="delete_btn">') )
+				.appendTo('#person_list');
 			});
-			*/
 		}
 		
 		function fn_insert(){
@@ -84,6 +86,35 @@
 				}); // ajax
 			})  // click
 		}  // fn_insert()
+		
+		function fn_delete() {
+			$('body').on('click', '#delete_btn', function(){
+				// $(this) == '#delete_btn'
+				// var sno = $(this).parent().find('input:hidden[name=sno]').val();  //  $('delete_btn').closest('tr')  -> delete_btn에서 가장가까운 tr
+				// var sno = $(this).parent('tr').find('input:hidden[name=sno]').val();
+				// var sno = $(this).parents('tr').find('input:hidden[name=sno]').val();
+				var sno = $(this).closest('tr').find('input:hidden[name=sno]').val();
+				if (confirm(sno + ' 정보를 삭제할까요?')) {
+					$.ajax({
+						url: 'deletePerson.do',
+						type: 'get',
+						data: 'sno=' + sno,
+						dataType: 'json',
+						success: function(obj) {
+							if (obj.count > 0) {
+								alert(sno + ' 정보가 삭제되었습니다.');
+								fn_selectList();
+							}else {
+								alert(sno + ' 정보가 삭제되지 않았습니다.');
+							}
+						},
+						error: function(xhr, textStatus, errorThrown) {
+							
+						}
+					})
+				}
+			})
+		}  // fn_delete()
 	</script>
 </head>
 <body>
