@@ -9,10 +9,47 @@
 	<script>
 		// 페이지 로드
 		$(document).ready(function(){
+			fn_selectList()
 			fn_insert();
 		});
 		
 		//함수
+		function fn_selectList() {
+			$.ajax({
+				url: 'selectPersonList.do',
+				type: 'get',
+				dataType: 'json',
+				success: function(arr) {
+					// console.log(arr);
+					fn_tableMaker(arr);
+				},
+				error: function(xhr, textStatus, errorThrown) {
+					
+				}
+			})
+		}
+		function fn_tableMaker(arr) {
+			
+			var result = '';
+			for (let i = 0; i < arr.length; i++) {
+				result += '<tr><td>' + arr[i].sno + '</td><td>' + arr[i].name + '</td><td>' + arr[i].age + '</td><td>' + arr[i].birthday + '</td><td>' + arr[i].regdate + '</td></tr>';
+			}
+			$('#Person_list').empty();
+			$('#person_list').html(result);
+			/*
+			$('#person_list').empty
+			$.each(arr function(i, person){
+				$('<tr>')
+				.append( $('<td>').text(person.sno) )
+				.append( $('<td>').text(person.name) )
+				.append( $('<td>').text(person.age) )
+				.append( $('<td>').text(person.birth) )
+				.append( $('<td>').text(person.regdate) )
+				.appendTo('#person_List');
+			});
+			*/
+		}
+		
 		function fn_insert(){
 			$('#insert_btn').click(function(){
 				var regSNO = /^[0-9]{6}$/;
@@ -28,6 +65,7 @@
 					success: function(obj) {
 						if (obj.count > 0) {
 							alert('등록되었습니다.');
+							fn_selectList();  // 목록을 새로 생성
 						}else {
 							alert('등록되지 않았습니다.')
 						}
@@ -39,7 +77,7 @@
 						// console.log(xhr.status);
 						// xhr.responseText : 응답된 텍스트, 예외 메시지가 전달
 						// console.log(xhr.responseText);
-						if (xhr.status == 3001 || xhr.status == 3002 || xhr.status == 3003) {
+						if (xhr.status == 3001 || xhr.status == 3002 || xhr.status == 3003 || xhr.status == 3004) {
 							alert(xhr.responseText);
 						}
 					}
@@ -68,6 +106,7 @@
 						<td>이름</td>
 						<td>나이</td>
 						<td>생일</td>
+						<td>등록일</td>
 					</tr>
 				</thead>
 				<tbody id="person_list">

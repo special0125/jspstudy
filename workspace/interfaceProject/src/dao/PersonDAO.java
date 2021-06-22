@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,7 +76,7 @@ public class PersonDAO {
 		return list;
 	}
 	
-	public int insertPerson(Person person) throws SQLException {
+	public int insertPerson(Person person) throws SQLIntegrityConstraintViolationException, SQLException {  // 예외를 던진다
 		int count = 0;
 	
 		con = getConnection();

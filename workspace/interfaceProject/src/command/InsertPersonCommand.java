@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,15 +49,20 @@ public class InsertPersonCommand extends HttpServlet {
 			response.getWriter().println(obj);
 		}catch (NumberFormatException e) {
 			// 나이 : 정수 이외의 값이 입력됨
-			response.setStatus(3001);  // 에러 코드 값을 작성, xhr.status
+			response.setStatus(3001);  // 에러 코드 값을 작성, xhr.status 에러코드 값은 임의로 정한다
 			response.getWriter().println("나이는 정수만 입력 가능합니다.");
 		}catch (RuntimeException e) {
 			// 나이 : 유효 범위 이외의 값이 입력됨
 			response.setStatus(3002);
 			response.getWriter().println("나이는 0~100 사이만 입력 가능합니다.");
-		}catch (SQLException e) {
-			// 이름, 생일 : 칼럼의 크기보다 길이가 긴 값이 입력됨
+		}catch (SQLIntegrityConstraintViolationException e) {
+			// 주민등록번호: 동일한 값을 입력하는 경우
 			response.setStatus(3003);
+			response.getWriter().println("동일한 주민등록번호는 입력할 수 없습니다.");
+		}
+		catch (SQLException e) {
+			// 이름, 생일 : 칼럼의 크기보다 길이가 긴 값이 입력됨
+			response.setStatus(3004);
 			response.getWriter().println("입력 데이터의 확인하세요.");
 		}
 	

@@ -8,3 +8,4 @@ CREATE TABLE PERSON
 	REGDATE DATE
 );
 
+select * from person;
